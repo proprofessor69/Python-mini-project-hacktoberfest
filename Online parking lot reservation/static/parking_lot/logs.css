@@ -1,0 +1,36 @@
+.container{
+    background-color: #0072B5;
+    color:white;
+    border: 2px solid black;
+    width: 300px;
+    padding: 5px 0px 8px 32px; 
+}
+
+.main{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    row-gap: 20px;
+}
+
+h1{
+    text-align: center;
+    text-decoration: underline;
+}
+
+#btn
+{
+    background-color: #0072B5;
+color: white;
+padding: 9px 21px;
+border-radius: 6px;
+margin-top: 25px;
+}
+
+#btn a{
+    text-decoration: none;
+    color: white;
+}
+
+h2{
+    text-align: center;
+}

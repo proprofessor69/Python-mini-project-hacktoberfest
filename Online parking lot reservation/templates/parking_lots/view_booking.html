@@ -1,0 +1,38 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'parking_lot/view_booking.css' %}">
+{% endblock link %}
+{% block body %}
+<h1>Your Bookings</h1>
+
+<table>
+   <tr>
+     <th>DATE</th>
+     <th>FROM TIME</th>
+     <th>TO TIME</th>
+     <th>BOOKING ID</th>
+     <th>VEHICLE NUMBER</th>
+     <th>ACKNOWLEDGEMENT</th>
+     <th>CANCEL BOOKING</th>
+   </tr>
+   {% for i in item2 %}
+   <tr>
+        <td>{{i.date}}</td>
+        <td>{{i.from_time}}</td>
+        <td>{{i.to_time}}</td>
+        <td>{{i.id}}</td>
+        <td>{{i.vehicle}}</td>
+      <td>
+        <form action="{% url 'parking_lot:acknowledge' i.id%}">
+          <button type="submit" id="btn-cancel"> VIEW </button>
+        </form>
+      </td>
+      <td><form action=" {% url 'parking_lot:cancelBookin' i.id %} " methos = 'POST'>
+        <input type="submit" id = "btn-cancel" value="CANCEL">
+      </form></td>
+    </tr>
+
+    {% endfor %}
+    </table>
+{% endblock body %}

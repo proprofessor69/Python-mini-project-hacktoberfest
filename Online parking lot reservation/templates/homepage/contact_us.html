@@ -1,0 +1,42 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block link %}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'homepage/contact_us.css' %}">
+{% endblock link %}
+
+{% block body %}
+<h1>Contact Page</h1>
+<div class="context">
+    <div class="container">
+        <div class="myname">
+            <i class="material-icons">account_box</i>
+            <span class="name-box">
+            MOHAMMED SAIF
+            </span>
+        </div>
+    </div>
+
+
+    <div class="container2">
+        <div class="myname">
+            <i class="material-icons">location_city</i>
+            <span class="name-box">
+            BANGALORE 
+            </span>
+        </div>
+    </div>
+
+    <div class="container3">
+        <div class="myname">
+            <i class="material-icons">email</i>
+            <span class="name-box">
+            <a href="mailto:mohammedsaif9513@gmail.com?subject=Online Parking Management"> Click to Mail </a>
+            </span>
+        </div>
+    </div>
+
+
+</div>
+{% endblock body %}
+

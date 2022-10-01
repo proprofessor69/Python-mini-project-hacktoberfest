@@ -1,0 +1,17 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block link %}
+
+{% endblock link %}
+
+{% block body %}
+
+<p> Are you sure you want to delete Parking Lot with ID:{{item.parking_lot_id}} </p>
+
+ <form action="{% url 'parking_lot:delete_parking_lots' item.parking_lot_id %}" method="POST">
+    {% csrf_token %}
+    <a href="{% url 'parking_lot:show_parking' %}">CANCLE</a>
+    <input type="submit" value="CONFIRM" >
+</form>
+
+{% endblock body %}

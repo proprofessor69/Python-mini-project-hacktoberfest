@@ -1,0 +1,42 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block link %}
+  <link rel="stylesheet" href="{% static 'parking_lot/book_parking.css' %}">
+{% endblock link %}
+{% block body %}
+<h1>Booking For Parking Space ID : {{item.parking_lot_id_id}}</h1>
+<div class="container">
+
+<form action="" method="POST">
+    {% csrf_token %}
+
+  <p><label for="vehicle">VEHICLE</label>
+      <select name = "vehicle_reg" id="vehicle_reg">
+          {% for item in item2 %} 
+          <option >  {{item}}</option>
+          {% endfor %}
+      </select>
+  </p>
+
+  
+  <p><label for="date">Enter the date</label>
+  <input type="date" name = "date"></p>
+
+
+  <p>
+    <label for="start_time">START TIME</label>
+    <input type="time"name = "start_time">
+  </p>
+  <p>
+    <label for="EndTime">End Time</label>
+    <input type="time" value="EndTime" id="end_time" name = "end_time" >
+  </p>
+
+
+  <input type="submit" value="BOOK">
+</form>
+<p>
+<p>{{message}}</p>
+</p>
+</div>
+{% endblock body %}

@@ -1,0 +1,40 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 94%;
+    margin: 20px 39px;
+  }
+  
+  td, th {
+    border: 2px solid black;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th{
+    color: #0072B5;
+  }
+
+.search{
+    padding: 55px 39px 8px 417px;
+    display: flex;
+}
+
+input[type=text], select 
+   {
+       width: 66%;
+       padding: 12px;
+       border: 1px solid #ccc;
+       border-radius: 14px;
+       box-sizing: border-box;
+       margin-bottom: 5px;
+       resize: vertical;
+   }
+  input[type=submit] {
+    background-color: #0072B5;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 17px;
+    cursor: pointer;
+  }

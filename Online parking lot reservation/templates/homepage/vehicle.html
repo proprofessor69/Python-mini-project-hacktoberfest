@@ -1,0 +1,31 @@
+
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block link %}
+    <link rel="stylesheet" href="{% static 'homepage/vehicle.css' %}">
+{% endblock link %}
+{% block body %}  
+<div class="container">
+<form action="vehicle" method = "POST">
+    {% csrf_token %}
+    <label for="type">Vehicle Type</label>
+    <select name="type" id="type">
+        <option value="MotorCycle">MotorCycle</option>
+        <option value="Car">Car</option>
+    </select>
+
+    <label for="plate">Vehicle Registration(plate) Number</label>
+    <input type="text"  name="Registration_number" placeholder = "Enter your reg..."  onkeyup="this.value = this.value.toUpperCase();">
+
+    <label for="name">Vehicle's Manufacturer's Name</label>
+    <input type="text" name = "vehicle_manu" placeholder="Enter your vehicle's name...">
+    
+    <label for="name">Vehicle's Model Name</label>
+    <input type="text" name = "vehicle_model" placeholder="Enter the model name of your vehicle...">
+
+    <input type="submit"  value="SUBMIT">
+    <p id = "message_error">{{message}}</p>
+
+</form>
+</div>
+{% endblock body %} 

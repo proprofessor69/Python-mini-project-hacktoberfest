@@ -1,0 +1,26 @@
+#btn-par{
+    background-color: #0072B5;
+    color: white;
+    padding: 9px 21px;
+    border-radius: 6px;
+    margin: 20px 193px;
+  }
+
+  h1{
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  #spaces{
+    width: 175px;
+  }
+
+  .container{
+    width: 415px;
+    margin: 125px auto;
+  }
+  label {
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+  }

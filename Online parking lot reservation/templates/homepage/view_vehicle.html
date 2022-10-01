@@ -1,0 +1,38 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'homepage/view_vehicle.css' %}">
+{% endblock link %}
+{% block body %}
+    <h1>Your Vehicles</h1>
+    {% for i in form %}
+    <form action="delete_vehicle" method='POST' >
+    {% csrf_token %}
+   <div class="container">
+        <p>
+            VEHICLE-TYPE <br>
+            VEHICLE REGISTRATION NUMBER<br>
+            VEHICLE'S COMPANY NAME<br>
+            VEHICLE MODEL NAME</p>
+        <div class="vl"></div>
+        <div class="data">
+        <p>
+          {{i.vehicle_type}}<br>
+          {{i.registration}}<br>
+           {{i.vechicle_manu}}<br>
+           {{i.vehicle_model}}</p>
+        </div>
+        <a href="{% url 'homepage:delete_vehicle' i.registration %}"><i class="fa fa-trash" ></i></a>
+        <a href="{% url 'homepage:update_vehicle' i.registration %}"><i class =  "fa far fa-edit"></i></a>
+    </div>
+    </form>
+        <br>
+    {% endfor %}
+    <br>
+    <form action="{% url 'homepage:vehicle' %}" method="get">
+        <button id = "add_vehicle"> ADD VEHICLE</button>
+    </form>
+
+   
+{% endblock body %}
+

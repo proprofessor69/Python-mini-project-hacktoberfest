@@ -1,0 +1,36 @@
+.container{
+    background-color: #E7E9EB;
+    color: black;
+    display: flex;
+    justify-content: space-evenly;
+    border: 2px solid gray;
+    border-radius: 32px;
+    margin: 40px 0 -45px 0px;
+}
+.vl {
+    border-left: 6px solid #0072B5;
+    height: 120px;
+  }
+.fa{
+  padding: 46px 0px;
+  }
+
+#add_vehicle{
+  background-color: #0072B5;
+  color: white;
+  padding: 9px 21px;
+  border-radius: 6px;
+  margin: 7px 500px;
+  cursor: pointer;
+}
+
+  #add_vehicle a{
+    text-decoration: none;
+    color:white;
+  }
+
+
+h1{
+  text-align: center;
+  text-decoration: underline;
+}

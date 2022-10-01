@@ -1,0 +1,25 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'parking_lot/cancelBooking.css' %}">
+{% endblock link %}
+
+{% block body %}
+<div class="container">
+    <p> Are you sure you want to cancel the booking with id : {{item.id}} </p>
+   <div class="btns">
+
+    <form action=" {% url 'parking_lot:deleteBooking' item.id %}" method="POST">
+        {% csrf_token %}
+        <input type="text" name = "reason" placeholder = "Enter the reason">
+        <button type="submit" class="btn">CONTINUE</button>
+    </form>
+
+       <form action=" {% url 'parking_lot:view_booking' %}">
+           <button type="submit" id="no-btn" class="btn">DON'T CANCEL</button>
+       </form>
+
+     
+   </div>
+</div>
+{% endblock body %}

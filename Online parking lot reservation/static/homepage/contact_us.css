@@ -1,0 +1,45 @@
+
+
+.container{
+    border: 2px solid black;
+    height: 44px;
+    margin: 20vh 39vw;
+    width: 257px;
+}
+.myname{
+    text-align: center;
+    margin: 7px 0 6px 0;
+}
+
+.material-icons{
+    border: 2px solid black;
+}
+
+.name-box
+{
+    position: relative;
+    top:-5px;
+}
+
+.container2{
+    border: 2px solid black;
+    height: 44px;
+    margin: -17vh 39vw;
+    width: 257px;
+}
+
+.container3{
+    border: 2px solid black;
+    width: 257px;
+    height: 44px;
+    margin: 20vh 39vw;
+}
+
+h1{
+    text-align: center;
+    text-decoration: underline;
+}
+
+a{
+    text-decoration: none;
+}

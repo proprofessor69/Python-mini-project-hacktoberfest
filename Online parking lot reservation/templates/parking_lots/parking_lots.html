@@ -1,0 +1,33 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'parking_lot/parking_lots.css' %}">
+{% endblock link %}
+
+{% block body %}
+<h1>Add Parking Lot</h1>
+<div class="container">
+<form action="parking_lots" method = "POST">
+    {% csrf_token %}
+
+<p><label for="spaces">Number of Spaces</label>
+<input type="text" id = "spaces" name="spaces"></p>
+
+<p><label for="address">Address</label>
+
+<textarea name="address" id="address" ></textarea>
+
+
+<p><label for="zipcode">Zipcode</label>
+<input name = "zipcode" id="zipcode" type="number"></p>
+
+<input type="submit" id="btn-par" value="SUBMIT">
+</form>
+
+{% for message in messages %}
+{{message}}
+{% endfor %}
+
+</div>
+{% endblock body %}

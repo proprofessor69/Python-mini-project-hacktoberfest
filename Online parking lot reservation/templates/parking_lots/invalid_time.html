@@ -1,0 +1,13 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'parking_lot/invalid_time.css' %}">
+{% endblock link %}
+
+{% block body %}
+<div class="container">
+    <h3>The Enter time is invalid please check and enter the time again </h3>
+
+    <button id = "btn"> <a href="{% url 'parking_lot:book_parking' id %}"> Try Again</a></button>
+</div>
+{% endblock body %}

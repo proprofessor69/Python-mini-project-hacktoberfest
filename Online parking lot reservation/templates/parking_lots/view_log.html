@@ -1,0 +1,14 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'parking_lot/view_log.css' %}">
+{% endblock link %}
+
+{% block body %}
+<form action=" {% url 'parking_lot:view_log' item.id %} " method ="POST">
+    {% csrf_token %}
+  <h1>Enter the date for which you need you view the log</h1>
+  <p><input type="date" name = "date"></p>
+  <input type="submit" id = "btn" value="Check">
+</form>
+{% endblock body %}

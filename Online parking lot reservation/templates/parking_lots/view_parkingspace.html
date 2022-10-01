@@ -1,0 +1,26 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block link %}
+   <link rel="stylesheet" href=" {% static 'parking_lot/parking_spaces.css' %} ">
+{% endblock link %} 
+{% block body %}
+<h1> Showing Parking Spaces for ID : {{form.parking_lot_id}}</h1>
+<p>
+    <div class="parking-space">
+        <div class="space-box">
+            
+        {% for i in data %}
+        {% if user.is_superuser %}
+        <div class="N">ID : {{i.id}}
+
+        <button id = "btn"> <a href=" {% url 'parking_lot:view_log' i.id%} ">View Log</a></div> </button>
+        {% else %}
+
+            <div class="N">ID : {{i.id}} <button id = "btn"> <a href="{% url 'parking_lot:book_parking' i.id %}"> book-now</a></button>
+                <button id = "btn"> <a href=" {% url 'parking_lot:view_log' i.id%} ">View Log</a></div> </button>
+         {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+</p>
+{% endblock body %}

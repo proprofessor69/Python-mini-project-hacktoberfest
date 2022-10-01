@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ACKNOWLEDGE</title>
+        <link rel="stylesheet" href="{% static 'parking_lot/ack.css' %}">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+        <a href="{% url 'parking_lot:view_booking' %}">RETURN</a>
+        <div class="context">
+                <p> <div class="bloge"> User ID:</div> {{user.id}}</p>
+                <p> <div class="bloge"> Name:</div> {{user.first_name}}</p>
+                <p> <div class="bloge"> BOOKING ID :</div> {{form.id}}</p>
+                <p> <div class="bloge"> VEHILCE NUMBER :</div> {{form.vehicle}}</p>
+                        <p>  <div class="bloge"> VEHICLE MODEL:</div> {{form3.vehicle_model}}</p>
+                        <p>  <div class="bloge"> DATE:</div> {{form.date}}</p>
+                        <p>  <div class="bloge"> FROM:</div> {{form.from_time}}</p>
+                        <p>  <div class="bloge"> TO:</div> {{form.to_time}}</p>
+                        <p>  <div class="bloge"> PARKING SPACE ID:</div> {{form.parking_space_id}}</p>
+                        <p>  <div class="bloge"> PARKING LOT ID:</div> {{form.parking_lot_id}}</p>
+                       <p>   <div class="bloge"> PARKING LOT ADDRESS:</div> {{form2.parking_lot_address}}</p>
+                        <button onclick="window.print()"><i class="fa fa-print"> PRINT</i></button>
+                </div>      
+</body>
+</html>
+
+
+
+
+
+
+

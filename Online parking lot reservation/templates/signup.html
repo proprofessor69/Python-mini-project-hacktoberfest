@@ -1,0 +1,25 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'signup.css' %}">
+{% endblock link %}
+
+{% block body%}
+    
+    <div class="container">
+        <h1>Signup</h1>
+        <div class="main">
+
+    <form action="signup" method="POST">
+        {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" id = "submit" value="Submit">
+        </form>
+    </div>
+</div>
+    <a href="login" id ="login">ALREADY HAVE AN ACCOUNT? CLICK HERE TO LOGIN</a>
+    {% for message in messages %}
+    <p id="messages">{{message}}</p>
+    {% endfor %}
+    {% endblock body %}

@@ -1,0 +1,29 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block link %}
+    <link rel="stylesheet" href="{% static 'homepage/home.css' %}">
+{% endblock link %}
+{% block body %}
+{% if user.is_superuser %} <h1>WELCOME ADMIN</h1>
+{% else %}
+<h1>Welcome to Online Parking Reservation System</h1>
+<h2>Do you struggle to find the parking space daily?</h2>
+    
+<h3>No worries we provide online parking Reservation, so that next day you don't have to waste time in seraching for parking space 
+    <br>
+    <br><br>
+    {% if user.is_authenticated %}
+        Want to register your vehicle , <button class="btn"> <a href=" {% url 'homepage:vehicle' %} "> Click Here</a></button>
+       <p> Want to view parkinglots(NOTE!! You should have atleast registerd one of your vehicle to book the slot) ,  <button class="btn"><a href=" {% url 'parking_lot:show_parking' %} "> Click Here</a></button> </p>
+        {% else %}
+        New here, <button class= "btn"><a href="{% url 'ac:signup' %}">SIGN UP</a></button>&nbsp;&nbsp;
+       <button class = "btn"> <a href="{% url 'ac:login' %}">LOGIN</a> </button>
+    {% endif %}
+ 
+    <br>
+    <br><br>
+
+</h3>
+{% endif %}
+{% endblock body %}
+

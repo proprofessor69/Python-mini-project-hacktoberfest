@@ -1,0 +1,40 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block link %} <link rel="stylesheet" href="{% static 'parking_lot/show_parking.css' %}">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock link %} 
+{% block body %}
+<h1>Parking Lots</h1>
+<table>
+    <tr> 
+        <th>PARKING LOT ID</th>
+        <th>NUMBER OF SPACES</th>
+        <th>PARKING LOT ADDRESS</th>
+        <th>PARKING LOT ZIP-CODE</th>
+        {% if user.is_superuser %}
+        <th>DELETE</th>
+        {% endif %}
+        <th>SELECT</th>
+    </tr>
+    {% for i in form %}
+    
+    
+     <tr>
+        <td>{{i.parking_lot_id}}</td>
+        <td> {{i.no_of_spaces}}</td>
+        <td>{{i.parking_lot_address}}</td>
+        <td>{{i.parking_lot_zipcode}}</td>
+        {% if user.is_superuser%}
+        <td><a href="{% url 'parking_lot:delete_parking_lots' i.parking_lot_id %}"><i class="fa fa-trash" style='font-size:24px'></i></a></td>
+        {% endif %}
+        <form action="{% url 'parking_lot:view_parkingspace' i.parking_lot_id %}">
+          <td>  <button type="submit" id = "btn">SELECT</button></td>
+        </form>
+
+      </tr>
+   
+
+    {% endfor %}
+</table>
+{% endblock body %}

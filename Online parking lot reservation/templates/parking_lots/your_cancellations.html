@@ -1,0 +1,49 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'parking_lot/your_cancellations.css' %}">
+{% endblock link %}
+
+{% block body %}
+    {% if user.is_superuser %}
+    <div class="search">
+        <form action="{% url 'parking_lot:serach_admin' %}" method = "POST">
+            {% csrf_token %}
+            <input type="text" name = "user" placeholder = "Enter the user id">
+            <input type="submit" value="Search">
+        </form>
+        <form action="{% url 'parking_lot:admin_view_cancellation' %}">
+            <input type="submit" value="VIEW ALL">
+        </form>
+    </div>
+    {% endif %}
+
+    <table>
+        <tr>
+            {% if user.is_superuser %}
+            <th>USER ID</th>
+            {% endif %}
+            <th>CANCELLATION ID</th>
+            <th>REASON</th>
+            <th>CANCELLATION DATE AND TIME</th>
+            <th>BOOKED DATE</th>
+            <th>BOOKED START TIME</th>
+            <th>BOOKED END TIME</th>
+        </tr>
+        {% for i in item %}
+        <tr>
+            {% if user.is_superuser %}
+                <td>{{i.book_id.user_id_id}}</td>
+            {% endif %}
+            <td>{{i.cancel_id}}</td>
+            <td>{{i.reason}}</td>
+            <td>{{i.cancellation_date_time}}</td>
+            <td>{{i.book_id.date}}</td>
+            <td>{{i.book_id.from_time}}</td>
+            <td>{{i.book_id.to_time}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock body %}

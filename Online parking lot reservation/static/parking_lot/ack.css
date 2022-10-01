@@ -1,0 +1,13 @@
+body{
+    align-items: center;
+}
+.context{
+    border: 2px solid black;
+    width: 528px;
+    margin: auto;
+  }
+
+.bloge{
+  color: green;
+}
+  

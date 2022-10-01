@@ -1,0 +1,21 @@
+.btn{
+    background-color: #0072B5;
+    color: white;
+
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+.container{
+  margin: 133px 43px 31px 360px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.btns{
+  display: flex;
+}
+
+#no-btn{
+  margin: 2px 21px 58px 30px;
+}

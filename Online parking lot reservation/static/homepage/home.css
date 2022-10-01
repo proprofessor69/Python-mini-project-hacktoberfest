@@ -1,0 +1,80 @@
+h1{
+    text-align: center;
+    animation: color-change 2s infinite;
+    animation-direction: alternate;
+}
+h2{
+    padding: 0px 60px;
+    color: blue;
+}
+h3{
+    padding: 0px 60px;
+    animation:fade 3s;
+}
+h3 a{
+    text-decoration: underline;
+    animation:fade 3s;
+    color:black;
+}
+
+
+@keyframes color-change {
+    0% { color: black; }
+    50% { color:grey ; }
+    100% { color:lightgrey ; }
+  }
+
+@keyframes button-color{
+  0% {background-color: rgb(226, 226, 226);border: 2px solid rgb(226, 226, 226);}
+  75% {background-color: rgb(226, 226, 226);border:2px solid rgb(226, 226, 226)}
+  100% {background-color: #0072B5;}
+}
+
+ h2 {
+    overflow: hidden; 
+    border-right: .10em solid #0072B5;
+    white-space: nowrap; 
+    margin: 0 auto;
+    letter-spacing: .10em; 
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+      
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #0072B5; }
+  }
+
+  @keyframes fade{
+    0%{color:rgb(226, 226, 226);}
+    75%{color:rgb(226, 226, 226);}
+    100%{color:black;}
+  }
+  @keyframes fade-white{
+    0%{color:rgb(226, 226, 226);}
+    75%{color:rgb(226, 226, 226);}
+    100%{color:white;}
+  }
+
+  .btn
+  {
+    background-color: #0072B5;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 6px;
+    animation: button-color 3s;
+  }
+
+  .btn a{
+    text-decoration: none;
+    color: white;
+    animation: fade-white 3s;
+    
+  }

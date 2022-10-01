@@ -1,0 +1,12 @@
+h1{
+    text-align: center;
+}
+body{
+    text-align: center;
+}
+
+#btn{
+    background-color: #0072B5;
+color: white;
+border-radius: 6px;
+}

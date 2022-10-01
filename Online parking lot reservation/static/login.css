@@ -1,0 +1,39 @@
+
+.container{
+  position: absolute;
+background-color: #4994cd;
+height: 317px;
+width: 362px;
+padding: 62px 0 0 32px;
+margin-top: 77px;
+border-radius: 15px;
+box-shadow: 5px 10px 31px 22px #76c5e5;
+color: white;
+margin-left: 448px;
+}
+
+#btn{
+    padding: 10px;
+    background-color: blue;
+  border: blue;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+#acc{
+    text-decoration:none;
+    color:white;
+}
+
+input
+{
+  border-radius: 6px;
+  border: 2px solid #76c5e5 ;
+}
+
+label {
+  display: inline-block;
+  width: 87px;
+  text-align: right;
+}

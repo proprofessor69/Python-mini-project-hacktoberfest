@@ -1,0 +1,30 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'parking_lot/logs.css' %}">
+{% endblock link %}
+
+{% block body %}
+<h1> Showing Log For Parking Space ID : {{item2}}</h1>
+<h2>For Date : {{item3}}</h2>
+<div class="main">
+{% for i in item %}
+<div class="container">
+   <p>BOOKING ID :{{i.id}}</p> 
+   <p> VEHICLE NUM : {{i.vehicle}}</p>
+   <p> FROM TIME : {{i.from_time}}</p>
+   <p> TO TIME : {{i.to_time}}</p>
+</div>
+   {% endfor %}
+</div>
+
+{% if not user.is_superuser%}
+
+<button id = "btn"><a href="{% url 'parking_lot:book_parking' item2 %}">Go to Booking</a></button>
+
+{% else%}
+<p></p>
+{% endif%}
+
+{% endblock body %}

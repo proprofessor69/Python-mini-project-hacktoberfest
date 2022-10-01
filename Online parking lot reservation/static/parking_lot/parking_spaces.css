@@ -1,0 +1,33 @@
+.space-box{
+    display: inline-grid;
+    grid-template-columns: 182px 182px 182px 182px 182px 182px ;
+    background-color: rgb(226, 226, 226);
+    padding: 10px;
+    grid-row-gap: 20px;
+    grid-column-gap: 29px;
+}
+
+.N{
+    background-color:#A8C1D0;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    font-size: 14px;
+    text-align: end;
+    border-radius: 7px;
+}
+
+body a{
+    text-decoration:none;
+}
+#btn
+{
+    background-color: #0072B5;
+    color: white;
+    border-radius: 6px;
+    border: 2px solid #429ab6;
+}
+
+h1{
+    text-align:center;
+    text-decoration: underline;
+}

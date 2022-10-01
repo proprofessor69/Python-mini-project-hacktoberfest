@@ -1,0 +1,13 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'parking_lot/fullslot.css' %}">
+{% endblock link %}
+
+{% block body %}   
+<div class="container">
+    <h3>THE SLOT WHICH YOU ARE TRYING TO BOOK IS NOT AVAILABLE , PLEASE VIEW THE LOG AND BOOK AGAIN</h3>
+    <button id="btn" ><a href="{% url 'parking_lot:log' item2 item1 %}">Click Here To View Log</a></button>
+</div>
+{% endblock body %}

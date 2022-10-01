@@ -1,0 +1,107 @@
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.signup{
+  height: 325px;
+  width: 359px;
+  color: black;
+  border-radius: 30px;
+  position: relative;
+  left: 434px;
+  top: 50px;
+
+}
+
+
+.firstname{
+  padding: 2px;
+margin-bottom: 8px;
+}
+
+.lastname{
+  padding: 2px;
+margin-bottom: 8px;
+}
+
+
+.username{
+  padding: 2px;
+margin-bottom: 8px;
+}
+
+.email{
+  padding: 2px;
+margin-bottom: 8px;
+}
+
+.pass1{
+  padding: 2px;
+margin-bottom: 8px;
+}
+
+.pass2
+{
+  padding: 2px;
+  margin-bottom: 8px;
+}
+#submit
+{
+  padding: 6px;
+  background-color: blue;
+  border: blue;
+  border-radius: 8px;
+  color: white;
+  margin-left: 153px;
+  margin-top: 5px;
+}
+
+h1{
+  font-family:'Times New Roman', Times, serif;
+  text-align: left;
+}
+
+#messages{
+  text-align: center;
+  font-size: large;
+  font-weight: bolder;
+}
+
+.container{
+  background-color: #4994cd;
+height: 492px;
+width: 791px;
+padding: 1px 1px 0 29px;
+margin-top: 70px;
+border-radius: 15px;
+box-shadow: 5px 10px 31px 22px #76c5e5;
+color: white;
+margin-left: 256px;
+}
+.main
+{
+  padding-top:29px;
+}
+label
+ {
+  display: inline-block;
+  width: 150px;
+  text-align: right;
+}
+#login
+{
+    text-decoration: none;
+    margin-left: 424px;
+    color: blue;
+}
+
+input[type = "text"],input[type = "password" ]
+{
+  border-radius: 9px;
+  height: 24px;
+  width: 166px;
+  border: 2px solid #5ab9dd;
+}
+

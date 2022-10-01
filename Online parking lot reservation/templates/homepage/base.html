@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking-Booking</title>
+    <link rel="stylesheet" href="{% static 'homepage/style.css' %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% block link %}
+    
+    {% endblock link %}
+</head>
+<body>
+    <nav>
+        
+<div class="topnav">
+
+    {% if user.is_superuser%}
+   <a id= "add_parking" href="{% url 'parking_lot:parking_lots' %}">ADD PARKING</a>
+   <a href="{% url 'parking_lot:show_parking' %}">PARKING LOTS</a>
+   <a href="{% url 'parking_lot:admin_view_cancellation' %}">VIEW CANCELLATIONS</a>
+   {% else %}
+   <a  href="{% url 'homepage:home' %}">HOME</a>
+   <a href="{% url 'homepage:show_vehicle' %}">YOUR VEHICLES</a>
+   <a href="{% url 'parking_lot:show_parking' %}">PARKING LOTS</a>
+   <a href="{% url 'parking_lot:view_booking' %}">VIEW BOOKINGS</a>
+   <a href="{% url 'parking_lot:your_cancellations' %}">YOUR CANCELLATIONS</a>
+   <a href="{% url 'homepage:contact_us' %}">CONTACT</a>
+    {% endif %}
+
+
+    <div class="user">
+        {% if user.is_authenticated %}
+            
+            {% if user.is_superuser %}
+
+           <p id = "welcome_user">ADMIN </p>
+           <a href="/ac/logout">LOGOUT</a>
+           
+           {% else %}
+           <p id = "welcome_user">Welcome {{user.first_name}}</p>
+           <a href="/ac/logout">LOGOUT</a>
+           {% endif %}
+            {% else %}
+                 <a href="/ac/login" id = "login_a">LOGIN</a>
+                 <a href="/ac/signup" id = "signup_a">SINGUP</a>
+            {% endif %}
+        </div>
+  </div>
+    
+    </nav>
+    {% block body %} 
+    
+    {% endblock body %}
+</body>
+</html>

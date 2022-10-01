@@ -1,0 +1,31 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 94%;
+    margin: 20px 39px;
+  }
+  
+  td, th {
+    border: 2px solid black;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  
+  h1{
+    text-align: center;
+    text-decoration:underline;
+  }
+  
+  table th{
+    color: #0072B5;
+  }
+
+  #btn
+  {
+    background-color: #0072B5;
+    color: white;
+    padding: 9px 21px;
+    border-radius: 6px;
+    cursor:pointer;
+  }

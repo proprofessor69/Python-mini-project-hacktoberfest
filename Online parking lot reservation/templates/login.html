@@ -1,0 +1,37 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'login.css' %}">
+{% endblock link %}
+
+{% block body %}
+    <div class="container">
+        <form action="login" method="POST">
+            {% csrf_token %}
+           <p><label for="username">USERNAME</label>
+            <input type="text" name = "uname"></p>
+            <p> <label for="pass">PASSWORD</label>
+            <input type="password" name="pas" id="myInput"></p>
+            <input type="submit" value="LOGIN" id = "btn">
+            <input type="checkbox" onclick="myFunction()">Show Password 
+            <br>
+            {% for message in messages %}
+            {{message}}
+            {% endfor %}
+            <p ><a id = "acc" href="signup">CREATE NEW ACCOUNT</a></p>
+        </form>
+
+
+
+
+        <script>function myFunction() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+              x.type = "text";
+            } else {
+              x.type = "password";
+            }
+          } </script>
+    </div>
+
+    {% endblock body %}

@@ -1,0 +1,36 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 94%;
+    margin: 20px 39px;
+  }
+  
+  td, th {
+    border: 1.5px solid #000000;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th
+  {
+    color: #0072B5;
+  }
+  
+
+
+  #btn-cancel{
+    background-color: #0072B5;
+    color: white;
+    padding: 9px 21px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  #view{
+    text-decoration: none;
+  }
+
+  h1{
+    text-align: center;
+    text-decoration: underline;
+  }

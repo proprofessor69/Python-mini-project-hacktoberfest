@@ -1,0 +1,32 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'homepage/update_vehicle.css' %}">
+{% endblock link %}
+
+{% block body %}
+<h1>Update Your Vehicle</h1>
+<div class="container">
+<form action="{% url 'homepage:update_vehicle' item.registration %}" method = "POST">
+    {% csrf_token %}
+  <p>  <label for="type">Vehicle Type</label>
+    <select name="type" id="type">
+        <option value="{{item.vehicle_type}} " selected>{{item.vehicle_type}}</option>
+        <option value="MotorCycle">MotorCycle</option>
+        <option value="Car">Car</option>
+    </select></p>
+
+    <p><label for="plate">Vehicle Registration(plate) Number</label>
+    <input type="text" name="Registration_number" value = "{{item.registration}}"></p>
+
+ <p>   <label for="name">Vehicle's Manufacturer's Name</label>
+    <input type="text" id = "manu" name = "vehicle_manu" value="{{item.vechicle_manu}}"></p>
+    
+  <p>  <label for="name">Vehicle's Model Name</label>
+    <input type="text" id = "mod" name = "vehicle_model" value="{{item.vehicle_model}}"></p>
+
+    <input type="submit" value="UPDATE" id="update-btn">
+
+</form>
+</div>
+{% endblock body %}

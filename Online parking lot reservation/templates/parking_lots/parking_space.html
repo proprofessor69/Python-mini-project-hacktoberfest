@@ -1,0 +1,19 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+
+{% block link %}{% endblock link %}
+
+{% block body %}
+space = {{space}}
+<p>The parking id is {{item.parking_lot_id}}</p>
+<form action="{% url 'parking_lot:parking_space' item.parking_lot_id  %}" method = "POST">
+    {% csrf_token %}
+    <label for="parknig_lot_id">PARKING_LOT_ID</label>
+    <input type="number" value="{{item.parking_lot_id}}" name="parking_lot_id">
+    <label for="is_empty">IS_EMPTY</label>
+    <input type="number" value = "0" name = "is_empty">
+    <input type="submit" value="submit">
+</form>
+
+
+{% endblock body %}

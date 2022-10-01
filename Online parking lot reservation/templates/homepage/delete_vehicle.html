@@ -1,0 +1,20 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'homepage/delete_vehicle.css' %}">
+{% endblock link %}
+
+{% block body %}
+<div class="main">
+<h2> Are you sure you want to delete {{item}} </h2>
+<div class="container">
+<form action="{%url 'homepage:delete_vehicle' item.registration %}" method="POST">
+    {% csrf_token %}
+   <button class="btn"> <a href="{% url 'homepage:show_vehicle' %}">CANCLE</a> </button>
+    <input type="submit" class = "btn" value="CONFIRM" >
+</form>
+</div>
+</div>
+
+{% endblock body %}
