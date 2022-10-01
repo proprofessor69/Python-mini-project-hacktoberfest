@@ -1,2 +1,3 @@
+First Install This Library
 pip install PyQRCode
 pip install pypng
