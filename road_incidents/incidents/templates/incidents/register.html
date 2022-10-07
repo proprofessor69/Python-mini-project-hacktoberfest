@@ -1,0 +1,19 @@
+{% extends "incidents/layout.html" %}
+
+{% block body %}
+    <h2>Register</h2>
+
+    <form action="{% url 'register' %}" method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <input type="password" name="confirm" placeholder="Confirm Password">
+        <input type="submit" value="Register">
+    </form>
+
+    {% if message %}
+        <div>
+            {{ message }}
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,40 @@
+.body {
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-bottom: 1vh;
+}
+
+#map {
+    width: 98vw;
+    height: 88vh;
+    border: solid 1px black;
+    border-radius: 10px;
+}
+
+.nav-bar {
+    float: right;
+    margin-right: 1vw;
+}
+
+.nav-text {
+    padding-top: 1vh;
+    margin-left: 1vw;
+}
+
+.table-log {
+    margin: 0 auto;
+}
+
+.table-log tr:hover {
+    background-color: lightgray;
+}
+
+.table-log td, .table-log th {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.table-log th {
+    text-align: center;
+    background-color: orange;
+}
