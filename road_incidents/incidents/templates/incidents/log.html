@@ -1,0 +1,25 @@
+{% extends "incidents/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <table class="table-log">
+        <tr>
+            <th>Incident Opened</th>
+            <th>Incident Closed</th>
+        </tr>
+        {% for incident in incidents %}
+            <tr>
+                <td>
+                    {{ incident.user }} | {{ incident.value }} | {{ incident.openDate }}
+                </td>
+                <td>
+                    {% if incident.closeDate is None %}
+                        Open
+                    {% else %}
+                        {{ incident.user }} | {{ incident.value }} | {{ incident.closeDate }}
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
